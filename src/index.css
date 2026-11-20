@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base: #F7F6F0;
+  --color-bg-surface: #FFFDF7;
+  --color-bg-elevated: #F0F0E6;
+  --color-bg-tinted: #E8EBDD;
+  --color-text-primary: #343D2B;
+  --color-text-secondary: #68715A;
+  --color-text-muted: #929987;
+  --color-accent-primary: #68764A;
+  --color-accent-primary-ink: #FFFFFF;
+  --color-accent-secondary: #A7B58A;
+  --color-accent-soft: #E3E9D8;
+  --color-accent-brown: #8B7058;
+  --color-accent-brown-soft: #EDE5DA;
+  --color-border-subtle: #DDE1D2;
+  --color-success: #547A55;
+  --color-warning: #A87832;
+  --color-danger: #A94F45;
+  --color-info: #657C82;
+
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+:root {
+  --wf-bg-base: #F7F6F0;
+  --wf-bg-surface: #FFFDF7;
+  --wf-bg-elevated: #F0F0E6;
+  --wf-bg-tinted: #E8EBDD;
+  --wf-text-primary: #343D2B;
+  --wf-text-secondary: #68715A;
+  --wf-text-muted: #929987;
+  --wf-accent-primary: #68764A;
+  --wf-accent-secondary: #A7B58A;
+  --wf-accent-soft: #E3E9D8;
+  --wf-accent-brown: #8B7058;
+  --wf-accent-brown-soft: #EDE5DA;
+  --wf-border-subtle: #DDE1D2;
+  --wf-success: #547A55;
+  --wf-warning: #A87832;
+  --wf-danger: #A94F45;
+  --wf-info: #657C82;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--wf-bg-base);
+    color: var(--wf-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Ticket-stub semi-circular side cutouts matching #F7F6F0 canvas */
+.ticket-notches {
+  position: relative;
+}
+
+.ticket-notches::before,
+.ticket-notches::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background-color: #F7F6F0;
+  border: 1px solid #DDE1D2;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.ticket-notches::before {
+  left: -11px;
+}
+
+.ticket-notches::after {
+  right: -11px;
+}
+
+/* VoiceOrb Animations */
+@keyframes orb-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.96;
+  }
+  50% {
+    transform: scale(1.035);
+    opacity: 1;
+  }
+}
+
+@keyframes orb-ripple {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.42;
+  }
+  100% {
+    transform: scale(1.36);
+    opacity: 0;
+  }
+}
+
+@keyframes orb-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orb-breathe {
+  animation: orb-breathe 3.8s ease-in-out infinite;
+}
+
+.animate-orb-ripple {
+  animation: orb-ripple 2.1s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-orb-spin {
+  animation: orb-spin 4.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-orb-breathe,
+  .animate-orb-ripple,
+  .animate-orb-spin {
+    animation: none !important;
+  }
+}
+
+/* Refined quiet-luxury scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 112, 88, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(104, 118, 74, 0.45);
+}

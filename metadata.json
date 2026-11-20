@@ -1,0 +1,6 @@
+{
+  "name": "Wayfinder",
+  "description": "Quiet-luxury voice AI travel concierge with parallel multi-agent research, human-in-the-loop booking approval, Google Calendar sync, and disruption recovery.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
